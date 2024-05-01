@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: param-demo
+  name: param-demo1
   namespace: pruebas-argocd
 spec:
   destination:
