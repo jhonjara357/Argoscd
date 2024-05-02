@@ -9,8 +9,8 @@ spec:
     namespace: pruebas-argocd 
     server: 'https://kubernetes.default.svc'
   source:
-    path: 0-Demo_Files/Params_Demo
-    repoURL: 'https://github.com/SMACAcademy/ArgoCD-Complete-Master-Course.git'
+    path: 0argocd
+    repoURL: 'https://github.com/jhonjara357/Argoscd.git'
     targetRevision: HEAD
   sources: []
   project: default
