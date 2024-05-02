@@ -1,19 +1,21 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: param-demo5
-  namespace: pruebas-argocd
+  name: my-deployment-prueba
+  labels:
+    app: nginx
 spec:
-  destination:
-    name: ''
-    namespace: pruebas-argocd 
-    server: 'https://kubernetes.default.svc'
-  source:
-    path: argocd
-    repoURL: 'https://github.com/jhonjara357/Argoscd.git'
-    targetRevision: HEAD
-  sources: []
-  project: default
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
