@@ -9,7 +9,7 @@ spec:
     namespace: pruebas-argocd 
     server: 'https://kubernetes.default.svc'
   source:
-    path: 0argocd
+    path: argocd
     repoURL: 'https://github.com/jhonjara357/Argoscd.git'
     targetRevision: HEAD
   sources: []
