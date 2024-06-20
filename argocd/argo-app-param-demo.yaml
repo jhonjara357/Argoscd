@@ -19,4 +19,9 @@ spec:
         image: nginx:1.22
         ports:
         - containerPort: 80
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
 
