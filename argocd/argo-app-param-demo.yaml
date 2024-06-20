@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment-prueba
+  name: nginx-pruebas
   labels:
     app: nginx
 spec:
@@ -15,7 +15,12 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
+      - name: nginx-pruebas
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
